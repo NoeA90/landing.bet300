@@ -2,348 +2,256 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<title>BET300 · Bono de bienvenida</title>
-<meta name="theme-color" content="#0b1026"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>BET300 · Beneficio de bienvenida</title>
+<meta name="theme-color" content="#0b1130"/>
 <style>
-:root{
-  --bg:#0b1026;         /* azul oscuro */
-  --panel:#0e1635;      /* panel azul + profundo */
-  --panel2:#0a122f;
-  --border:#1a2552;
-  --text:#eaf0ff;
-  --muted:#a8b1db;
-  --accent:#7c4dff;     /* violeta */
-  --turq:#22d3ee;       /* cian */
-  --ok:#25D366;         /* whatsapp */
-  --cta:#2ee06d;        /* botón registro */
-  --pill:#ffb873;       /* naranja suave */
-  --pill2:#ffd7a6;      /* beige/anaranjado */
-  --grad1:linear-gradient(135deg, rgba(124,77,255,.24), rgba(34,211,238,.18));
-  --grad2:linear-gradient(90deg, #7c59ff, #00d1ff);
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;background:radial-gradient(900px 500px at 80% -10%, rgba(124,77,255,.18), transparent),
-           radial-gradient(700px 400px at 0% 0%, rgba(34,211,238,.12), transparent),
-           var(--bg);
-  color:var(--text);font:16px/1.35 system-ui,-apple-system,Segoe UI,Roboto;
-}
-.container{max-width:1100px;margin:18px auto 100px;padding:0 12px}
-.brandRow{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.logo{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:12px;
-  background:radial-gradient(100% 100% at 50% 0%, #21306b,#0c1538);
-  color:#9bd0ff;font-weight:900;letter-spacing:.5px;border:1px solid #1e2a63;box-shadow:0 10px 25px rgba(0,0,0,.35)}
-.brand{font-weight:900;letter-spacing:.5px;font-size:22px}
-.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;
-  color:#161b2e;background:linear-gradient(180deg,var(--pill),var(--pill2));font-weight:800;border:1px solid rgba(255,255,255,.06)}
-.badgeClock{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;
-  background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--muted);font-weight:700}
-.headerRight{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+  :root{
+    --bg:#0b1130; --bg2:#0e1540; --panel:#0f183f;
+    --ink:#eaf0ff; --muted:#aab4e3;
+    --accent:#ff9a3d; --accent2:#ffd8a6; --ok:#22c55e;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:
+      radial-gradient(1200px 600px at 70% -10%, rgba(255,154,61,.12), transparent),
+      radial-gradient(900px 480px at 0% 0%, rgba(255,216,166,.10), transparent),
+      linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%);
+    color:var(--ink);
+    font:16px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:12px 12px 88px}
+  header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .logo{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:14px;
+    background:linear-gradient(180deg,#101b52,#0f1744); border:1px solid rgba(255,255,255,.06)}
+  .logo i{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:900;
+    background:radial-gradient(120% 120% at 30% 20%, #67e8f9, #3b82f6 55%, #1e3a8a); color:#061026}
+  .logo b{font-weight:900;letter-spacing:.4px}
+  .tag{margin-left:auto;padding:6px 10px;border-radius:999px;font-size:12px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));color:#111;font-weight:800}
 
-.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:12px}
-@media(max-width:920px){.grid{grid-template-columns:1fr;gap:10px}}
+  .grid{display:grid;gap:10px}
+  @media(min-width:880px){.grid{grid-template-columns:1.05fr .95fr}}
 
-.card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:12px;box-shadow:0 15px 40px rgba(0,0,0,.35)}
-h1,h2,h3,p{margin:0 0 8px}
-h1{font-size:22px}
-h2{font-size:20px}
-.muted{color:var(--muted)}
+  .card{background:linear-gradient(180deg,#101944,#0b1130);
+    border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:12px}
+  h1{margin:0 0 8px;font-size:20px}
+  p{margin:0 0 8px;color:var(--muted)}
 
-.wheelBox{position:relative;border:1px solid #202b65;border-radius:16px;background:var(--panel2);padding:10px}
-.halfWheel{
-  aspect-ratio: 2/1; width:100%;
-  background:
-   conic-gradient(from 200deg, #c0b0ff 0 50%, #ffd7a6 50% 75%, #c0b0ff 75% 100%);
-  border-radius:999px 999px 0 0 / 85% 85% 0 0;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05), 0 10px 30px rgba(0,0,0,.35);
-  position:relative;overflow:hidden;
-}
-.marker{
-  position:absolute;left:50%;top:4px;transform:translateX(-50%);
-  width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:18px solid #ffae55;filter:drop-shadow(0 4px 6px rgba(0,0,0,.35))
-}
-.segLabel{
-  position:absolute;left:50%;transform:translateX(-50%);font-weight:900;filter:drop-shadow(0 1px 0 rgba(0,0,0,.45));text-shadow:0 0 12px rgba(0,0,0,.5)
-}
-.lab10{top:55%;font-size:18px}
-.lab20{top:38%;left:43%;font-size:18px;transform:none}
-.lab30{top:47%;left:64%;font-size:18px;transform:none}
+  /* ================== WHEEL (Temu-like) ================== */
+  .wheelBox{position:relative;display:grid;place-items:center;margin-top:4px}
+  .pointer{
+    position:absolute;top:-4px;left:50%;transform:translateX(-50%);
+    width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;
+    border-bottom:18px solid var(--accent); filter:drop-shadow(0 6px 10px rgba(255,154,61,.45)); z-index:3;
+  }
+  .wheelShell{
+    width:min(92vw,520px); aspect-ratio:1/1; border-radius:50%;
+    background:radial-gradient(60% 60% at 50% 45%, rgba(255,255,255,.06), transparent 60%),
+               linear-gradient(180deg,#0a1135,#0a1135);
+    border:1px solid rgba(255,255,255,.08); position:relative; overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 30px rgba(0,0,0,.25);
+  }
+  .wheel{
+    position:absolute;inset:0;border-radius:50%;
+    background:conic-gradient(
+      #ffcf99 0 120deg,      /* 10% */
+      #bfa6ff 120deg 240deg, /* 20% */
+      #99ffd5 240deg 360deg  /* 30% */
+    );
+    transition:transform 1.25s cubic-bezier(.17,.95,.2,1);
+  }
+  /* Separadores & marcas */
+  .wheel::before{
+    content:""; position:absolute; inset:0; border-radius:50%;
+    background:
+      conic-gradient(from 0deg, rgba(0,0,0,.28) 0 1deg, transparent 1deg 120deg,
+                               rgba(0,0,0,.28) 120deg 121deg, transparent 121deg 240deg,
+                               rgba(0,0,0,.28) 240deg 241deg, transparent 241deg 360deg);
+    pointer-events:none;
+  }
+  /* Etiquetas */
+  .labels{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+  .labels span{position:absolute;font-weight:900;color:#0b1130;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+  .lab10{transform:translate(-42%, -38%) rotate(-30deg)}
+  .lab20{transform:translate(-2%, -48%)}
+  .lab30{transform:translate(38%, -38%) rotate(30deg)}
+  @media(max-width:460px){
+    .labels span{font-size:12px}
+    .lab10{transform:translate(-40%, -40%) rotate(-30deg)}
+    .lab20{transform:translate(-2%, -50%)}
+    .lab30{transform:translate(40%, -40%) rotate(30deg)}
+  }
+  .centerBtn{
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:40%; max-width:190px; aspect-ratio:1/1; border-radius:50%;
+    background:radial-gradient(70% 70% at 35% 30%, #ffe7cf, #ffb970 65%, #ff9a3d);
+    border:2px solid rgba(255,255,255,.8); display:grid; place-items:center;
+    color:#1a1208; font-weight:900; letter-spacing:.5px;
+    box-shadow:0 10px 25px rgba(0,0,0,.45), inset 0 6px 16px rgba(255,255,255,.45);
+    cursor:pointer; user-select:none;
+  }
+  .centerBtn:active{transform:translate(-50%,-50%) scale(.98)}
 
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.btn{
-  appearance:none;border:none;cursor:pointer;padding:12px 14px;border-radius:14px;font-weight:900;
-  background:linear-gradient(180deg,#ffb873,#ff9755);color:#1a1427;border:1px solid rgba(255,255,255,.06);
-  box-shadow:0 10px 24px rgba(0,0,0,.35)
-}
-.btn.secondary{background:rgba(255,255,255,.06);color:var(--text);border:1px solid var(--border)}
-.btn.cta{background:var(--cta);color:#0b0f1f}
-.btn.wa{background:var(--ok);color:#0b0f1e}
-.btn:disabled{opacity:.6;cursor:not-allowed}
+  /* ====== Side (resultado) ====== */
+  .badge{display:inline-block;min-width:120px;text-align:center;padding:10px;border-radius:12px;
+    background:linear-gradient(90deg,#7c59ff,#00e5ff); color:#061026; font-weight:900; border:1px solid rgba(255,255,255,.12)}
+  .title{margin:6px 0 2px;font-size:18px}
 
-.resultTag{
-  display:inline-grid;place-items:center;min-width:150px;height:46px;padding:0 14px;border-radius:12px;
-  background:var(--grad2);color:#061228;font-weight:900;border:1px solid rgba(255,255,255,.06)
-}
-.panelInfo{background:var(--panel2);border:1px solid var(--border);border-radius:14px;padding:10px}
+  /* Botones */
+  .btnRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .btn{appearance:none;border:none;cursor:pointer;padding:12px 14px;border-radius:12px;font-weight:900}
+  .cta{background:linear-gradient(90deg,#22c55e,#86efac); color:#052015}
+  .ghost{background:transparent;border:1px solid rgba(255,255,255,.12); color:var(--ink)}
+  .sec{background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#101010}
 
-.kv{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
-.k{color:var(--muted)} .v{font-weight:800}
+  /* Dock (mobile) */
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:10;display:flex;gap:8px;padding:8px 10px;
+    background:linear-gradient(180deg, rgba(11,17,48,0) 0%, rgba(11,17,48,.9) 24%, rgba(11,17,48,.98) 100%)}
+  .dock .btn{flex:1}
 
-.fixedDock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:
-  linear-gradient(180deg, rgba(12,15,30,0) 0%, rgba(12,15,30,.85) 22%, rgba(12,15,30,.95) 100%);
-  padding:8px 10px 10px;display:flex;gap:8px}
-@media(min-width:860px){.fixedDock{display:none}}
-
-.small{font-size:12px}
-.hr{height:1px;background:rgba(255,255,255,.06);margin:8px 0}
-
-/* Chips arriba del botón registrar */
-.inlineHelps{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 4px}
-.chip{display:inline-flex;gap:8px;align-items:center;padding:6px 8px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--muted);font-weight:700}
+  /* Layout compacto para reducir scroll */
+  @media(max-width:880px){
+    .wrap{padding-bottom:82px}
+    h1{font-size:18px}
+  }
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="brandRow">
-      <div class="logo">B3</div>
-      <div class="brand">BET300</div>
-      <span class="pill">Plataforma renovada · Autogestión</span>
-      <span class="badgeClock" id="clock">—</span>
-      <div class="headerRight">
-        <a id="platformTop" class="btn" target="_blank" rel="noopener">🎮 Entrar a la plataforma</a>
-        <a id="whTop" class="btn wa" target="_blank" rel="noopener">🟢 WhatsApp</a>
-      </div>
-    </div>
+  <div class="wrap">
+    <header>
+      <div class="logo"><i><b>B3</b></i><b>BET300</b></div>
+      <span class="tag">Plataforma renovada · Autogestión</span>
+    </header>
 
     <div class="grid">
-      <!-- IZQUIERDA -->
-      <div class="card">
+      <!-- WHEEL -->
+      <section class="card">
         <h1>Elegí tu beneficio de bienvenida</h1>
-        <p class="muted">Giramos la <b>media ruleta</b> y te asignamos <b>extra</b> en tu primera carga.</p>
-        <div class="wheelBox" style="margin-top:8px">
-          <div class="halfWheel" id="halfWheel">
-            <div class="marker"></div>
-            <div class="segLabel lab10">10% EXTRA</div>
-            <div class="segLabel lab20">20% EXTRA</div>
-            <div class="segLabel lab30">30% EXTRA</div>
-          </div>
-          <div class="actions">
-            <button id="spinBtn" class="btn">🎯 Asignar beneficio</button>
-            <button id="termsBtn" class="btn secondary">ℹ️ Condiciones</button>
-            <a id="videoBtn" class="btn secondary" target="_blank" rel="noopener" style="display:none">▶️ Ver video explicativo</a>
-          </div>
-        </div>
-      </div>
+        <p class="muted">Girá la ruleta y obtené <b>extra</b> en tu primera carga.</p>
 
-      <!-- DERECHA -->
-      <div class="card">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-          <div class="resultTag" id="resultTag">—</div>
-          <h2 id="resultTitle">Tenés 1 intento disponible</h2>
+        <div class="wheelBox">
+          <div class="pointer" aria-hidden="true"></div>
+          <div class="wheelShell">
+            <div id="wheel" class="wheel"></div>
+            <div class="labels">
+              <span class="lab10">10% EXTRA</span>
+              <span class="lab20">20% EXTRA</span>
+              <span class="lab30">30% EXTRA</span>
+            </div>
+            <button id="spin" class="centerBtn">GIRAR</button>
+          </div>
         </div>
+
+        <div class="btnRow">
+          <button id="rules" class="btn ghost">ℹ️ Condiciones</button>
+          <a id="platformTop" class="btn sec" href="#" target="_blank" rel="noopener">🌐 Plataforma</a>
+        </div>
+      </section>
+
+      <!-- RESULT / CTA -->
+      <aside class="card">
+        <span id="prizeBadge" class="badge">—</span>
+        <div class="title" id="title">Tenés 1 intento disponible</div>
         <p class="muted">El beneficio se aplica a tu <b>primera carga</b> en la plataforma.</p>
 
-        <div class="panelInfo" style="margin-top:8px">
-          <div class="k">Resultado actual</div>
-          <div id="resultBox" class="v">—</div>
-          <div class="kv"><span class="k">Código:</span><span class="v" id="code">—</span> <span class="k">·</span> <span class="v" id="ts">—</span></div>
+        <div class="card" style="margin-top:8px">
+          <p style="margin-bottom:6px"><b>Resultado actual</b></p>
+          <p id="result" class="muted">—</p>
         </div>
 
-        <div class="inlineHelps">
-          <span class="chip">💬 Soporte en vivo 24 hs dentro de la plataforma</span>
-          <span class="chip">🔒 Autogestión: cargas y retiros</span>
+        <div class="btnRow" style="margin-top:8px">
+          <a id="cta" class="btn cta" href="#" target="_blank" rel="noopener">🎁 REGISTRATE PARA RECLAMAR</a>
         </div>
-
-        <div class="actions" style="margin-top:8px">
-          <a id="regBtn" class="btn cta" target="_blank" rel="noopener">🎁 REGISTRATE PARA RECLAMAR</a>
-          <a id="whBtn" class="btn wa" target="_blank" rel="noopener">🟢 WhatsApp (opcional)</a>
-        </div>
-      </div>
+      </aside>
     </div>
   </div>
 
-  <!-- DOCK MOBILE -->
-  <div class="fixedDock">
-    <button id="spinBtnBottom" class="btn" style="flex:1">🎯 Asignar</button>
-    <a id="platformBottom" class="btn" style="flex:1" target="_blank" rel="noopener">🌐 Plataforma</a>
-    <a id="regBottom" class="btn cta" style="flex:1" target="_blank" rel="noopener">🎁 Registrar</a>
+  <!-- Dock mobile -->
+  <div class="dock">
+    <button id="spin2" class="btn sec">🎯 Girar</button>
+    <a id="cta2" class="btn cta" href="#" target="_blank" rel="noopener">🎁 Registrate para reclamar</a>
   </div>
 
 <script>
-/* ====== Parámetros ====== */
-const params = new URLSearchParams(location.search);
-const pcParam = (params.get("pc") || "1").trim();
-const pc = (pcParam.match(/^[1-4]$/) ? pcParam : "1");
+/* ============ CONFIG ============ */
+const REGISTER_URL  = "https://bet300.biz/#/register"; // link de registro
+const PLATFORM_URL  = "https://bet300.biz";            // home plataforma (opcional)
+/* ================================= */
 
-const REG_LINK = params.get("reg") || "https://bet300.biz/registro"; // <-- poné tu URL fina de registro
-const PLATFORM_LINK = "https://bet300.biz";                           // <-- home/plataforma
+document.getElementById('cta').href  = REGISTER_URL;
+document.getElementById('cta2').href = REGISTER_URL;
+document.getElementById('platformTop').href = PLATFORM_URL;
 
-// video externo opcional:
-const VIDEO_URL = params.get("video") || "";
+const wheel    = document.getElementById('wheel');
+const spinBtn  = document.getElementById('spin');
+const spinBtn2 = document.getElementById('spin2');
+const resultEl = document.getElementById('result');
+const badgeEl  = document.getElementById('prizeBadge');
+const titleEl  = document.getElementById('title');
 
-// WhatsApp por PC:
-const WHATS = {
-  "1": "54911171561685",
-  "2": "54911171561022",
-  "3": "54911171331067",
-  "4": "549111135854862"
-};
-const WH = WHATS[pc] || WHATS["1"];
-
-/* ====== UI ====== */
-const spinBtn = document.getElementById('spinBtn');
-const spinBtnBottom = document.getElementById('spinBtnBottom');
-const resultTag = document.getElementById('resultTag');
-const resultTitle = document.getElementById('resultTitle');
-const resultBox = document.getElementById('resultBox');
-const codeEl = document.getElementById('code');
-const tsEl = document.getElementById('ts');
-const termsBtn = document.getElementById('termsBtn');
-const videoBtn = document.getElementById('videoBtn');
-
-const regBtn = document.getElementById('regBtn');
-const regBottom = document.getElementById('regBottom');
-const platformTop = document.getElementById('platformTop');
-const platformBottom = document.getElementById('platformBottom');
-const whBtn = document.getElementById('whBtn');
-const whTop = document.getElementById('whTop');
-const clock = document.getElementById('clock');
-
-/* ====== Set links ====== */
-function setLinks(){
-  const regUrl = `${REG_LINK}?src=landing&pc=${pc}`;
-  const platUrl = `${PLATFORM_LINK}?pc=${pc}`;
-  regBtn.href = regUrl;
-  regBottom.href = regUrl;
-  platformTop.href = platUrl;
-  platformBottom.href = platUrl;
-
-  const msg = encodeURIComponent(
-    "Hola, quiero registrarme en BET300 para reclamar el beneficio de bienvenida y hacer mi primera carga."
-  );
-  const wa = `https://wa.me/${WH}?text=${msg}`;
-  whBtn.href = wa; whTop.href = wa;
-
-  if (VIDEO_URL){
-    videoBtn.href = VIDEO_URL;
-    videoBtn.style.display = "inline-flex";
-  }
-}
-setLinks();
-
-/* ====== Reloj simple ====== */
-function tick(){
-  const n=new Date();
-  const hh=String(n.getHours()).padStart(2,'0');
-  const mm=String(n.getMinutes()).padStart(2,'0');
-  const ss=String(n.getSeconds()).padStart(2,'0');
-  clock.textContent = `🕒 ${hh}:${mm}:${ss}`;
-}
-tick(); setInterval(tick,1000);
-
-/* ====== Utilidades ====== */
-function tsString(d=new Date()){
-  const dd=String(d.getDate()).padStart(2,'0'),mm=String(d.getMonth()+1).padStart(2,'0'),yyyy=d.getFullYear();
-  const hh=String(d.getHours()).padStart(2,'0'),mi=String(d.getMinutes()).padStart(2,'0');
-  return `${dd}/${mm}/${yyyy} ${hh}:${mi}`;
-}
-async function sha256hex(msg){
-  const enc = new TextEncoder().encode(msg);
-  const buf = await crypto.subtle.digest("SHA-256", enc);
-  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
-}
-const SALT="bet300-welcome-v1";
-function ensureDeviceId(){
-  let id = localStorage.getItem('b3_device');
-  if(!id){ id = (crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2,8)}`); localStorage.setItem('b3_device', id); }
-  return id;
-}
-const DEVICE_ID = ensureDeviceId();
-
-/* ====== Sorteo (ponderado) ====== */
-// 10% (50%), 20% (35%), 30% (15%)
-function pickBonus(){
-  const r = Math.random();
-  if(r < 0.50) return 10;
-  if(r < 0.85) return 20;
-  return 30;
-}
-
-/* ====== LOG local ====== */
-function logEvent(kind, data){
-  const key='b3_welcome_log';
-  const arr = JSON.parse(localStorage.getItem(key) || '[]');
-  arr.unshift({ts: Date.now(), kind, data});
-  localStorage.setItem(key, JSON.stringify(arr.slice(0,100)));
-}
-
-/* ====== Asignación ====== */
+let spinning = false;
 let used = false;
-async function assign(){
-  if(used){ alert("Ya asignaste tu beneficio. Registrate para reclamarlo."); return; }
-  used = true;
-  spinBtn.disabled = true; spinBtnBottom.disabled = true;
 
-  // “animación” suave del marcador (simulada)
-  resultTitle.textContent = "Asignando beneficio…";
-  await new Promise(r=>setTimeout(r, 450));
+/* Definimos los 3 premios y su centro angular (en el círculo) */
+const prizes = [
+  { name:"10% EXTRA", centerDeg:  60 },  // centrado dentro del 1er sector (0..120)
+  { name:"20% EXTRA", centerDeg: 180 },  // 2do sector (120..240)
+  { name:"30% EXTRA", centerDeg: 300 }   // 3er sector (240..360)
+];
 
-  const bonus = pickBonus();
-  const label = `${bonus}% EXTRA`;
-  const codeBase = `${DEVICE_ID}|${label}|${SALT}|pc:${pc}`;
-  const code = (await sha256hex(codeBase)).slice(0,8).toUpperCase();
-  const ts = tsString();
-
-  // Persistir
-  localStorage.setItem('b3_welcome_bonus', String(bonus));
-  localStorage.setItem('b3_welcome_code', code);
-  localStorage.setItem('b3_welcome_ts', ts);
-
-  // Log
-  logEvent('ASSIGN', {bonus, code, pc});
-
-  // UI
-  resultTag.textContent = label;
-  resultTitle.textContent = "🎉 Beneficio asignado";
-  resultBox.textContent = `Resultado: ${label}. Registrate y hacé tu primera carga para aplicarlo.`;
-  codeEl.textContent = code;
-  tsEl.textContent = ts;
+/* La flecha apunta al TOP (270°). Para alinear el centro del sector elegido con la flecha:
+   rotación = girosCompletos + (270 - centerDeg) + leve variación */
+function rotationFor(centerDeg) {
+  const spins = 4 * 360;                         // 4 giros para “feeling Temu”
+  const nudge = (Math.random()*8 - 4);           // +/-4°
+  return spins + (270 - centerDeg) + nudge;
 }
 
-/* ====== Restitución diaria opcional ====== */
-(function daily(){
-  const today = new Date(); const tkey = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
-  const stored = localStorage.getItem('b3_welcome_day');
-  if(stored !== tkey){
-    localStorage.removeItem('b3_welcome_bonus');
-    localStorage.removeItem('b3_welcome_code');
-    localStorage.removeItem('b3_welcome_ts');
-    localStorage.setItem('b3_welcome_day', tkey);
-  }
-})();
+function pickPrize() {
+  // Probabilidad pareja. (Si querés bias, cambiá aquí)
+  const idx = Math.floor(Math.random()*3);
+  return { index: idx, ...prizes[idx] };
+}
 
-/* ====== Restaurar si ya asignó ====== */
-(function restore(){
-  const b = localStorage.getItem('b3_welcome_bonus');
-  const c = localStorage.getItem('b3_welcome_code');
-  const t = localStorage.getItem('b3_welcome_ts');
-  if(b && c && t){
-    used = true; spinBtn.disabled = true; spinBtnBottom.disabled = true;
-    const label = `${b}% EXTRA`;
-    resultTag.textContent = label;
-    resultTitle.textContent = "🎉 Beneficio asignado";
-    resultBox.textContent = `Resultado: ${label}. Registrate y hacé tu primera carga para aplicarlo.`;
-    codeEl.textContent = c; tsEl.textContent = t;
-  }
-})();
+function showResult(p) {
+  badgeEl.textContent = p.name;
+  titleEl.textContent = "🎉 Beneficio asignado";
+  resultEl.textContent = `Resultado: ${p.name}. Registrate e iniciá tu primera carga para aplicarlo.`;
+}
 
-/* ====== Eventos ====== */
-spinBtn.addEventListener('click', assign);
-spinBtnBottom.addEventListener('click', assign);
-termsBtn.addEventListener('click', ()=>{
-  alert("Condiciones:\n\n• Válido solo para usuarios nuevos.\n• El beneficio aplica en la primera carga efectuada en la plataforma dentro de las 24 hs.\n• No acumulable con otras promos.\n• BET300 puede modificar/pausar la promo sin previo aviso.");
+async function spin() {
+  if (spinning) return;
+  if (used) { alert("Ya usaste tu intento."); return; }
+  spinning = true;
+
+  const p = pickPrize();
+  const rot = rotationFor(p.centerDeg);
+  wheel.style.transform = `rotate(${rot}deg)`;
+
+  await new Promise(r => setTimeout(r, 1300));
+  showResult(p);
+  used = true;
+  spinning = false;
+
+  // Mini log local (auditoría simple)
+  try {
+    const logs = JSON.parse(localStorage.getItem('bet300_ab_log')||"[]");
+    logs.unshift({ts:new Date().toISOString(), prize:p.name});
+    localStorage.setItem('bet300_ab_log', JSON.stringify(logs.slice(0,20)));
+  } catch(e){}
+}
+
+spinBtn.addEventListener('click', spin);
+spinBtn2.addEventListener('click', spin);
+
+document.getElementById('rules').addEventListener('click', ()=>{
+  alert(`CONDICIONES
+• Beneficio válido solo para la primera carga.
+• Registrate e iniciá tu carga desde la plataforma para aplicarlo.
+• Autogestión disponible para cargas y retiros.
+• Soporte en vivo 24/7 por el chat de la plataforma.`);
 });
 </script>
 </body>
