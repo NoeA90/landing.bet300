@@ -1,233 +1,307 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<title>BET300 · Autogestión 30% EXTRA</title>
-<meta name="theme-color" content="#0b1130"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>BET300 · Autogestión con 30% EXTRA</title>
+<meta name="theme-color" content="#0c1224" />
 <style>
-:root{
-  --bg:#0b1130; --bg2:#0e1540; --panel:#0f183f;
-  --ink:#eaf0ff; --muted:#aab4e3;
-  --accent:#ff9a3d; --accent2:#ffd8a6; --ok:#22c55e;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0; color:var(--ink);
-  font:16px/1.35 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
-  background:
-    radial-gradient(1100px 520px at 70% -10%, rgba(255,154,61,.10), transparent),
-    radial-gradient(900px 520px at 0% 0%, rgba(255,216,166,.08), transparent),
-    linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%);
-}
-.wrap{max-width:980px;margin:0 auto;padding:14px 14px 96px}
-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.brand{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:16px;
-  background:linear-gradient(180deg,#101b52,#0f1744); border:1px solid rgba(255,255,255,.08)}
-.brand i{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-weight:900;
-  background:radial-gradient(120% 120% at 30% 20%, #67e8f9, #3b82f6 55%, #1e3a8a); color:#061026}
-.brand b{font-weight:900;letter-spacing:.4px}
-.tag{margin-left:auto;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:800;color:#111;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));}
+  :root{
+    --bg:#0c1224;         /* azul noche */
+    --panel:#0f1630;      /* panel oscuro */
+    --panel2:#0b122b;
+    --border:#1a254a;
+    --text:#ecf1ff;
+    --muted:#aab3df;
+    --accent:#7c4dff;     /* violeta */
+    --cyan:#22d3ee;
+    --ok:#25D366;         /* WhatsApp */
+    --cta:#10b981;        /* verde registro */
+    --warning:#ffb86b;    /* acento beige/naranja */
+    --grad1:#2a185a; --grad2:#102a43; --grad3:#0b1b2a;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; color:var(--text); background: radial-gradient(1200px 700px at 15% -5%, rgba(124,77,255,.2), transparent),
+                                 radial-gradient(900px 500px at 85% 10%, rgba(34,211,238,.15), transparent),
+                                 linear-gradient(180deg, var(--bg) 0%, #0a1123 55%, #081021 100%);
+    font:16px/1.35 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+  }
+  .container{max-width:980px;margin:18px auto 96px;padding:0 14px}
+  .grid{display:grid;gap:12px}
+  @media(min-width:920px){.grid{grid-template-columns:1.1fr .9fr}}
 
-.card{background:linear-gradient(180deg,#101944,#0b1130);
-  border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:14px}
-h1{margin:0 0 8px;font-size:22px}
-h2{margin:0 0 8px;font-size:18px}
-p{margin:0 0 8px;color:var(--muted)}
-.hero{display:grid;gap:12px}
-@media(min-width:860px){.hero{grid-template-columns:1.05fr .95fr}}
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)),
+                var(--panel);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:12px;
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+  }
+  .hero{padding:12px}
+  h1,h2,h3,p{margin:0 0 8px}
+  .muted{color:var(--muted)}
+  .badge{
+    display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;
+    background:linear-gradient(90deg,#7c59ff,#00d1ff); color:#091224;
+    border:1px solid rgba(255,255,255,.08); box-shadow:0 6px 18px rgba(0,0,0,.35);
+  }
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:12px;font-weight:800;
+    background:linear-gradient(90deg,#6b5cff,#1ed4ff); color:#0a0f1f;border:1px solid rgba(255,255,255,.06);
+    min-height:40px;
+  }
+  .small{font-size:12px;color:var(--muted)}
+  .panelList{display:grid;gap:8px}
+  .row{display:flex;gap:10px;align-items:center}
+  .ok{color:#b3f5cf}
+  .warn{color:#ffe0b3}
 
-.badge{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,#7c59ff,#00e5ff);
-  color:#061026;font-weight:900;border:1px solid rgba(255,255,255,.12)}
+  /* Banner */
+  .banner{
+    width:100%; border-radius:16px; overflow:hidden; margin-bottom:12px;
+    box-shadow:0 8px 22px rgba(0,0,0,.45);
+    background:linear-gradient(180deg,#1a2244,#0f1630);
+  }
+  .banner img{display:block;width:100%;height:auto;object-fit:cover;object-position:center}
 
-.list{display:grid;gap:8px;margin:6px 0 10px}
-.li{display:flex;gap:10px;align-items:flex-start}
-.li i{font-style:normal;color:#ffd8a6}
+  /* CTA buttons dock */
+  .dock{
+    position:fixed;left:0;right:0;bottom:0;z-index:30;
+    background:linear-gradient(180deg,rgba(10,15,30,0) 0%, rgba(10,15,30,.85) 22%, rgba(10,15,30,.98) 100%);
+    padding:10px 12px 12px; display:flex; gap:10px; flex-wrap:wrap
+  }
+  .btn{
+    appearance:none;border:none;cursor:pointer;font-weight:900;border-radius:14px;
+    padding:14px 14px; width:100%; color:#07121f;
+    box-shadow:0 10px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.06);
+  }
+  .btn.cta{background:linear-gradient(90deg,#2af598,#009efd)}
+  .btn.platform{background:linear-gradient(90deg,#4ade80,#16a34a)}
+  .btn.wp{background:linear-gradient(90deg,#73ffa1,#25D366)}
+  .btn.ghost{
+    background:transparent;color:var(--text); border:1px solid var(--border); width:auto; padding:10px 12px
+  }
+  .btn:disabled{opacity:.65;cursor:not-allowed}
 
-.btnRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.btn{appearance:none;border:none;border-radius:12px;padding:14px 16px;font-weight:900;cursor:pointer}
-.cta{flex:1;min-width:220px;background:linear-gradient(90deg,#22c55e,#86efac);color:#051a10}
-.sec{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#101010}
-.ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.12)}
+  /* Code tag */
+  .codePill{
+    display:inline-flex;align-items:center; gap:8px; padding:6px 10px; border-radius:10px;
+    background:rgba(255,184,107,.12); color:#ffd8a6; border:1px solid rgba(255,184,107,.35);
+    font-weight:800; font-variant-numeric:tabular-nums; margin-left:6px;
+  }
 
-.kv{
-  border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08);
-  background:#0b1130;
-}
-.kv video{width:100%;display:block;background:#000}
+  /* Video */
+  .videoWrap{
+    border:1px solid var(--border); border-radius:14px; overflow:hidden; background:#0a1329
+  }
+  .videoWrap video{display:block;width:100%;height:auto}
 
-.small{font-size:12px;color:var(--muted)}
-.grid2{display:grid;gap:10px}
-@media(min-width:680px){.grid2{grid-template-columns:1fr 1fr}}
+  /* Header */
+  .head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .brand{display:flex;align-items:center;gap:8px}
+  .logo{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;
+        background:linear-gradient(135deg,#2d2df5 0%,#00d1ff 100%);color:white;font-weight:900}
+  .brandTitle{font-weight:900;letter-spacing:.2px;font-size:22px}
+  .rightTop{margin-left:auto;display:flex;gap:8px;align-items:center}
 
-.box{background:linear-gradient(180deg,#0e1642,#0b1130);
-  border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:12px}
-.kvNote{font-size:13px;color:var(--muted)}
+  /* Cards grid (premisas) */
+  .benefits{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  @media(max-width:560px){.benefits{grid-template-columns:1fr}}
 
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:10;display:flex;gap:8px;padding:10px;
-  background:linear-gradient(180deg, rgba(11,17,48,0) 0%, rgba(11,17,48,.92) 28%, rgba(11,17,48,.98) 100%)}
-.dock .btn{flex:1}
-
-.code{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  font-weight:800;letter-spacing:.5px;background:rgba(255,255,255,.06);padding:8px 10px;border-radius:10px;display:inline-block}
+  /* Reduce scroll en móvil */
+  @media(max-width:560px){
+    .container{margin-bottom:90px}
+    .btn{padding:13px 12px}
+  }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand"><i><b>B3</b></i><b>BET300</b></div>
-      <span class="tag">Autogestión · Cargas y Retiros</span>
-    </header>
+  <div class="container">
+    <div class="head">
+      <div class="brand">
+        <div class="logo">B3</div>
+        <div class="brandTitle">BET300</div>
+      </div>
+      <span class="badge">Plataforma renovada</span>
+      <div class="rightTop">
+        <button id="btnCond" class="btn ghost">Condiciones</button>
+      </div>
+    </div>
 
-    <section class="card hero">
-      <div>
-        <span class="badge">🎉 Bienvenido</span>
-        <h1>Plataforma renovada con <b>autogestión</b></h1>
-        <p>Registrate y hacé tu <b>primera carga automática</b> con <b>30% EXTRA</b>.  
-           Atención por <b>chat en vivo</b> dentro de la plataforma.</p>
-
-        <div class="list">
-          <div class="li"><i>⚡</i><p><b>Rápido:</b> cargas y retiros 24/7 desde tu cuenta.</p></div>
-          <div class="li"><i>🔒</i><p><b>Seguro:</b> todo desde la plataforma oficial.</p></div>
-          <div class="li"><i>🎁</i><p><b>30% EXTRA</b> en tu <u>primera carga automática</u>.</p></div>
+    <div class="grid">
+      <!-- Columna izquierda -->
+      <section class="card hero">
+        <!-- Banner con la imagen de los jokers -->
+        <div class="banner">
+          <!-- ⚠️ Reemplazá la ruta si usás otro nombre/carpeta -->
+          <img src="joker-banner.jpg" alt="BET300 promoción – personajes de slots" loading="lazy">
         </div>
 
-        <div class="box">
-          <p class="small">Tu código de registro:</p>
-          <div id="code" class="code">—</div>
+        <span class="badge">🎁 Bienvenida</span>
+        <h1>Autogestión para <b>cargas y retiros</b> + <b>30% EXTRA</b> en la primera carga</h1>
+        <p class="muted">Registrate y pedí tu usuario. Te damos un código único y podés cargar por
+          <b>chat dentro de la plataforma</b> o de forma <b>automática</b> en segundos.</p>
+
+        <div class="panelList" style="margin-top:8px">
+          <div class="row"><span class="ok">✔</span> Atención 24/7 por chat en la plataforma.</div>
+          <div class="row"><span class="ok">✔</span> Carga y retiro <b>autoasistido</b> en minutos.</div>
+          <div class="row"><span class="ok">✔</span> Seguridad + código de registro <span id="codeTag" class="codePill">—</span></div>
         </div>
 
-        <div class="btnRow">
-          <a id="ctaWp" class="btn cta" href="#" target="_blank" rel="noopener">📲 Crear usuario por WhatsApp</a>
-          <a id="ctaPlat" class="btn sec" href="#" target="_blank" rel="noopener">🎮 Ir a la plataforma</a>
-          <button id="btnHow" class="btn ghost">ℹ️ Cómo funciona</button>
+        <div style="margin-top:10px" class="row">
+          <button id="btnRegister" class="btn cta">🎁 REGISTRATE PARA RECLAMAR</button>
+          <button id="btnPlatform" class="btn platform">🌐 Plataforma</button>
         </div>
-      </div>
 
-      <div class="kv">
-        <!-- Reemplazá src por tu video vertical (historia). Mantengo muted/autoplay/loop para carga fluida -->
-        <video src="" playsinline muted autoplay loop poster="" id="kvVideo"></video>
-        <div class="kvNote">Video instructivo: cómo cargar y retirar con autogestión.</div>
-      </div>
-    </section>
-
-    <section class="grid2" style="margin-top:10px">
-      <div class="card">
-        <h2>¿Cómo arrancar?</h2>
-        <div class="list" style="margin-top:6px">
-          <div class="li"><i>1️⃣</i><p>Tocá <b>“Crear usuario por WhatsApp”</b> y enviá el mensaje con tu código.</p></div>
-          <div class="li"><i>2️⃣</i><p>Te damos acceso. Ingresá a la <b>plataforma</b>.</p></div>
-          <div class="li"><i>3️⃣</i><p>Hacé tu <b>primera carga automática</b> y recibí el <b>30% EXTRA</b>.</p></div>
+        <!-- Video explicativo (oculto si no hay archivo) -->
+        <div id="videoBox" class="videoWrap" style="margin-top:12px; display:none">
+          <!-- Reemplazá video.mp4 por tu archivo (ideal 9:16) -->
+          <video id="howto" playsinline controls poster="">
+            <source src="video.mp4" type="video/mp4">
+          </video>
         </div>
-      </div>
+      </section>
 
-      <div class="card">
-        <h2>Soporte</h2>
-        <p>Todo el soporte se brinda por el <b>chat en vivo</b> dentro de la plataforma.  
-           No se usa WhatsApp para cargas ni retiros.</p>
-      </div>
-    </section>
+      <!-- Columna derecha -->
+      <aside class="card">
+        <div class="pill" id="prizePill">30% EXTRA en la primera carga</div>
+        <p class="muted" style="margin-top:6px">Pedilo al registrarte. El extra se aplica sobre tu <b>primera carga automática</b> en la plataforma.</p>
+
+        <h3 style="margin-top:10px">Cómo funciona</h3>
+        <div class="benefits" style="margin-top:6px">
+          <div class="card" style="padding:10px">
+            <b>1) Registrate</b>
+            <p class="small">Te generamos un <b>código único</b> y te atendemos para crear tu usuario.</p>
+          </div>
+          <div class="card" style="padding:10px">
+            <b>2) Ingresá a la plataforma</b>
+            <p class="small">Vas a tener <b>chat en vivo</b> y menú de <b>autogestión</b>.</p>
+          </div>
+          <div class="card" style="padding:10px">
+            <b>3) Hacé tu primera carga</b>
+            <p class="small">Aplicamos el <b>30% extra</b> automáticamente.</p>
+          </div>
+          <div class="card" style="padding:10px">
+            <b>Soporte</b>
+            <p class="small">Si preferís, te asistimos desde el chat interno.</p>
+          </div>
+        </div>
+      </aside>
+    </div>
   </div>
 
-  <!-- Dock en móvil -->
+  <!-- Dock de botones (siempre visible) -->
   <div class="dock">
-    <a id="dockWp" class="btn cta" href="#" target="_blank" rel="noopener">📲 Crear usuario</a>
-    <a id="dockPlat" class="btn sec" href="#" target="_blank" rel="noopener">🎮 Plataforma</a>
+    <button id="btnRegisterBottom" class="btn cta">🎁 REGISTRATE PARA RECLAMAR</button>
+    <button id="btnPlatformBottom" class="btn platform">🌐 Plataforma</button>
   </div>
 
 <script>
-/* =================== CONFIG =================== */
-const PLATFORM_URL = "https://bet300.biz"; // Home / Login de la plataforma
-
-// WhatsApp por PC (sin +54 9, lo ponemos en link wa.me directamente)
+/* ========= Config ========= */
+/* WhatsApp por PC */
 const WP_NUMBERS = {
   pc1: "5491171561685",
   pc2: "5491171561022",
   pc3: "5491171331067",
   pc4: "5491135854862"
 };
-/* ============================================== */
+/* Plataforma (home) — ajustá si usás otra URL */
+const PLATFORM_URL = "https://bet300.biz";
 
-// Utilidades
-function qs(p){ return new URLSearchParams(location.search).get(p) }
-function pcKey(){
-  const raw = (qs("pc") || "1").trim();
-  return ("pc" + (raw.match(/^[1-4]$/) ? raw : "1"));
-}
+/* ========= Utilidades ========= */
+const params = new URLSearchParams(location.search);
+const pcParam = (params.get("pc") || "1").trim();
+const pcKey = "pc" + (pcParam.match(/^[1-4]$/) ? pcParam : "1");
+const WP = WP_NUMBERS[pcKey];
 
-// ID estable por dispositivo (para códigos reproducibles por día)
+/* ID de dispositivo simple para evitar duplicados */
 function ensureDeviceId(){
-  let id = localStorage.getItem('b3_device_id');
+  let id = localStorage.getItem('b3_device');
   if(!id){
-    const rnd = (crypto.randomUUID?.() || (Date.now()+"-"+Math.random().toString(36).slice(2,10)));
-    localStorage.setItem('b3_device_id', rnd);
-    id = rnd;
+    id = (crypto.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2,10)}`);
+    localStorage.setItem('b3_device', id);
   }
   return id;
 }
+const DEVICE_ID = ensureDeviceId();
+
 function todayKey(){
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  const n=new Date();
+  return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`;
 }
-async function sha256hex(str){
-  const enc = new TextEncoder().encode(str);
-  const buf = await crypto.subtle.digest("SHA-256", enc);
-  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
+function tsString(d=new Date()){
+  const dd=String(d.getDate()).padStart(2,'0'),
+        mm=String(d.getMonth()+1).padStart(2,'0'),
+        yyyy=d.getFullYear(),
+        hh=String(d.getHours()).padStart(2,'0'),
+        mi=String(d.getMinutes()).padStart(2,'0');
+  return `${dd}/${mm}/${yyyy} ${hh}:${mi}`;
+}
+async function sha256hex(msg){
+  if(!crypto?.subtle){ return null; }
+  try{
+    const enc = new TextEncoder().encode(msg);
+    const buf = await crypto.subtle.digest("SHA-256", enc);
+    return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
+  }catch{ return null; }
 }
 async function makeCode(){
-  const salt = "b3-autogestion-30";
-  const base = `${ensureDeviceId()}|${todayKey()}|${pcKey()}|${salt}`;
-  const hex  = await sha256hex(base);
-  return hex.slice(0,8).toUpperCase();
+  const salt = "bet300-reg-30v1";
+  const base = `${DEVICE_ID}|${todayKey()}|pc:${pcParam}|${salt}|${Math.random()}`;
+  const hex = await sha256hex(base);
+  const raw = hex || Math.random().toString(36).slice(2) + Date.now().toString(36);
+  return raw.slice(0,8).toUpperCase();
 }
 
-function wpLink(code){
-  const pc = pcKey();
-  const phone = WP_NUMBERS[pc] || WP_NUMBERS.pc1;
+/* Mostrar/ocultar video si existe archivo */
+(function tryShowVideo(){
+  // si vas a subir "video.mp4" al mismo directorio, se mostrará
+  fetch('video.mp4', {method:'HEAD'})
+    .then(r=>{ if(r.ok){ document.getElementById('videoBox').style.display='block'; } })
+    .catch(()=>{ /* no hay video, no mostramos */ });
+})();
 
-  const msg = `Hola BET300 👋 Quiero crear mi usuario.\nCódigo: ${code}\nPC: ${pc.toUpperCase()}\nPromoción: 30% EXTRA en mi primera carga automática.`;
-  return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-}
-
-function logLocal(code){
-  try{
-    const logs = JSON.parse(localStorage.getItem('b3_auto_logs')||"[]");
-    logs.unshift({ts: new Date().toISOString(), code, pc: pcKey()});
-    localStorage.setItem('b3_auto_logs', JSON.stringify(logs.slice(0,30)));
-  }catch(e){}
-}
-
-// Init
-(async ()=>{
+/* ========= Acciones ========= */
+async function goRegister(){
   const code = await makeCode();
-  document.getElementById('code').textContent = code;
+  localStorage.setItem('b3_reg_code', code);
+  localStorage.setItem('b3_reg_ts', tsString());
+  document.getElementById('codeTag').textContent = code;
 
-  const wpHref = wpLink(code);
-  const platHref = PLATFORM_URL;
+  const text = `Hola, quiero crear mi usuario en BET300 y reclamar el 30%% EXTRA en mi primera carga automática.
+• Código: ${code}
+• PC: ${pcParam}
+• Fecha/Hora: ${tsString()}
 
-  // CTAs
-  for(const id of ['ctaWp','dockWp']) document.getElementById(id).href = wpHref;
-  for(const id of ['ctaPlat','dockPlat']) document.getElementById(id).href = platHref;
+¿Me ayudás con el alta?`;
+  const href = `https://wa.me/${WP}?text=${encodeURIComponent(text)}`;
+  location.href = href;
+}
+function goPlatform(){ location.href = PLATFORM_URL + `/?pc=${pcParam}`; }
 
-  // Click log
-  for(const id of ['ctaWp','dockWp']){
-    document.getElementById(id).addEventListener('click', ()=>logLocal(code));
-  }
+/* ========= Wire ========= */
+document.getElementById('btnRegister').onclick = goRegister;
+document.getElementById('btnRegisterBottom').onclick = goRegister;
+document.getElementById('btnPlatform').onclick = goPlatform;
+document.getElementById('btnPlatformBottom').onclick = goPlatform;
 
-  // Modal simple “Cómo funciona”
-  document.getElementById('btnHow').addEventListener('click', ()=>{
-    alert(`CÓMO FUNCIONA
-1) Tocás “Crear usuario por WhatsApp” y enviás el mensaje con tu código.
-2) Te habilitamos el acceso.
-3) Entrás a la plataforma, hacés tu primera carga automática y recibís 30% EXTRA.
-Soporte en vivo dentro de la plataforma.`);
-  });
+/* Condiciones simples */
+document.getElementById('btnCond').onclick = ()=>alert(
+  `CONDICIONES PROMO 30% EXTRA
+— Beneficio válido solo para la PRIMERA carga automática del usuario nuevo.
+— El código generado es personal e intransferible (vence el mismo día).
+— Autogestión disponible dentro de la plataforma (cargas y retiros).
+— Soporte por chat en vivo 24/7 dentro de la plataforma.
+— Sujeto a verificación y términos de BET300.`
+);
 
-  // Si no tenés video, oculto el player
-  const kv = document.getElementById('kvVideo');
-  if(!kv.getAttribute('src')) kv.parentElement.style.display = 'none';
+/* Pintar pill con código si ya existe */
+(function restoreCode(){
+  const c = localStorage.getItem('b3_reg_code');
+  if(c){ document.getElementById('codeTag').textContent = c; }
 })();
 </script>
 </body>
