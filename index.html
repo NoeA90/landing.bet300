@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-
 <meta name="theme-color" content="#0c1224" />
 <style>
 :root{
@@ -71,14 +70,27 @@ h1{margin:6px 0 10px;font-size:1.6rem}
 }
 @media(max-width:560px){ .logoHero{max-height:74px} }
 
-.brandTitle{font-weight:900;font-size:28px;letter-spacing:1px}
 .badgeSub{display:inline-block;margin-top:4px}
 
-/* Banner */
-.banner{width:100%;border-radius:16px;overflow:hidden;margin-bottom:12px;
+/* Banner (AGRANDADO) */
+.banner{
+  width:100%;
+  border-radius:16px;
+  overflow:hidden;
+  margin-bottom:12px;
   box-shadow:0 8px 22px rgba(0,0,0,.45);
+  /* Altura responsiva del contenedor (puede omitirse si preferís setear en la img) */
 }
-.banner img{width:100%;display:block;object-fit:cover}
+.banner img{
+  width:100%;
+  height:clamp(260px, 44vw, 460px);     /* ← más alto en desktop */
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+@media(max-width:600px){
+  .banner img{ height:clamp(220px, 58vw, 360px); } /* ← más alto en móvil */
+}
 
 /* Dock y botones con armonía al logo */
 .dock{
@@ -117,6 +129,7 @@ h1{margin:6px 0 10px;font-size:1.6rem}
   border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#0a1329
 }
 .videoWrap video{width:100%;display:block}
+
 @media(max-width:560px){
   .container{margin-bottom:90px}
   .btn{padding:13px}
@@ -128,9 +141,8 @@ h1{margin:6px 0 10px;font-size:1.6rem}
     <div class="head">
       <!-- Subí el archivo a /public/bet300-logo.png o al mismo nivel del HTML -->
       <img src="bet300-logo.png" alt="Bet300 Logo" class="logoHero" loading="eager" decoding="async">
-      
-      <span class="badge badgeSub">🎰 Plataforma oficial</span><br>
-     
+      <span class="badge badgeSub">🎰 Plataforma oficial</span>
+    </div>
 
     <div class="grid">
       <section class="card hero">
@@ -144,8 +156,6 @@ h1{margin:6px 0 10px;font-size:1.6rem}
         <div class="row"><span class="ok">✔</span> Número de WhatsApp siempre actualizado en la plataforma.</div>
         <div class="row"><span class="ok">✔</span> Carga y retiro al instante.</div>
         <div class="row"><span class="ok">✔</span> Atención 24 hs <span id="codeTag" class="codePill">—</span></div>
-
-        
 
         <div id="videoBox" class="videoWrap" style="margin-top:12px;display:none">
           <video id="howto" playsinline controls poster="">
@@ -209,7 +219,7 @@ async function goRegister(){
   const code=await makeCode();
   localStorage.setItem('b3_reg_code',code);
   localStorage.setItem('b3_reg_ts',tsString());
-  document.getElementById('codeTag').textContent=code;
+  const codeTag=document.getElementById('codeTag'); if(codeTag) codeTag.textContent=code;
 
   const text=`Hola, quiero crear mi usuario en BET300 y reclamar el 30% EXTRA en mi primera carga automática.
 • Código: ${code}
@@ -220,12 +230,19 @@ async function goRegister(){
 }
 function goPlatform(){location.href=PLATFORM+(PLATFORM.includes('?')?`&pc=${pcParam}`:`?pc=${pcParam}`);}
 
-/* Wire */
-document.getElementById('btnRegister').onclick=goRegister;
-document.getElementById('btnRegisterBottom').onclick=goRegister;
-document.getElementById('btnPlatform').onclick=goPlatform;
-document.getElementById('btnPlatformBottom').onclick=goPlatform;
-document.getElementById('btnCond').onclick=()=>alert(`CONDICIONES PROMO 30% EXTRA
+/* Wire (solo si los botones existen) */
+const btnRegTop=document.getElementById('btnRegister');
+if(btnRegTop) btnRegTop.onclick=goRegister;
+const btnPlatTop=document.getElementById('btnPlatform');
+if(btnPlatTop) btnPlatTop.onclick=goPlatform;
+
+const btnRegBottom=document.getElementById('btnRegisterBottom');
+if(btnRegBottom) btnRegBottom.onclick=goRegister;
+const btnPlatBottom=document.getElementById('btnPlatformBottom');
+if(btnPlatBottom) btnPlatBottom.onclick=goPlatform;
+
+const btnCond=document.getElementById('btnCond');
+if(btnCond) btnCond.onclick=()=>alert(`CONDICIONES PROMO 30% EXTRA
 — Solo para la primera carga automática del usuario nuevo.
 — Código personal e intransferible (vence hoy).
 — Cargas y retiros instantáneos desde la plataforma.
@@ -233,7 +250,8 @@ document.getElementById('btnCond').onclick=()=>alert(`CONDICIONES PROMO 30% EXTR
 — Sujeto a verificación BET300.`);
 
 /* Mostrar el código previo si existe */
-const c=localStorage.getItem('b3_reg_code');if(c)document.getElementById('codeTag').textContent=c;
+const c=localStorage.getItem('b3_reg_code');
+if(c){ const codeTag=document.getElementById('codeTag'); if(codeTag) codeTag.textContent=c; }
 </script>
 </body>
 </html>
