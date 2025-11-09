@@ -3,171 +3,166 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>BET300 </title>
+<title>BET300</title>
 <meta name="theme-color" content="#0c1224" />
 <style>
-  :root{
-    --bg:#0c1224;         /* azul noche */
-    --panel:#0f1630;      /* panel oscuro */
-    --panel2:#0b122b;
-    --border:#1a254a;
-    --text:#ecf1ff;
-    --muted:#aab3df;
-    --accent:#7c4dff;     /* violeta */
-    --cyan:#22d3ee;
-    --ok:#25D366;         /* WhatsApp */
-    --cta:#10b981;        /* verde registro */
-    --warning:#ffb86b;    /* acento beige/naranja */
-    --grad1:#2a185a; --grad2:#102a43; --grad3:#0b1b2a;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0; color:var(--text); background: radial-gradient(1200px 700px at 15% -5%, rgba(124,77,255,.2), transparent),
-                                 radial-gradient(900px 500px at 85% 10%, rgba(34,211,238,.15), transparent),
-                                 linear-gradient(180deg, var(--bg) 0%, #0a1123 55%, #081021 100%);
-    font:16px/1.35 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
-  }
-  .container{max-width:980px;margin:18px auto 96px;padding:0 14px}
-  .grid{display:grid;gap:12px}
-  @media(min-width:920px){.grid{grid-template-columns:1.1fr .9fr}}
+:root{
+  /* Colores alineados al logo */
+  --bg:#0b1030;             /* azul noche */
+  --panel:#0f1630;          /* panel oscuro */
+  --border:#1a254a;
+  --text:#ecf1ff;
+  --muted:#aab3df;
 
-  .card{
-    background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)),
-                var(--panel);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:12px;
-    box-shadow:0 12px 30px rgba(0,0,0,.35);
-  }
-  .hero{padding:12px}
-  h1,h2,h3,p{margin:0 0 8px}
-  .muted{color:var(--muted)}
-  .badge{
-    display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;
-    background:linear-gradient(90deg,#7c59ff,#00d1ff); color:#091224;
-    border:1px solid rgba(255,255,255,.08); box-shadow:0 6px 18px rgba(0,0,0,.35);
-  }
-  .pill{
-    display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:12px;font-weight:800;
-    background:linear-gradient(90deg,#6b5cff,#1ed4ff); color:#0a0f1f;border:1px solid rgba(255,255,255,.06);
-    min-height:40px;
-  }
-  .small{font-size:12px;color:var(--muted)}
-  .panelList{display:grid;gap:8px}
-  .row{display:flex;gap:10px;align-items:center}
-  .ok{color:#b3f5cf}
-  .warn{color:#ffe0b3}
+  /* Paleta del logo */
+  --gold:#ffc447;           /* dorado BET */
+  --gold-2:#ffac2e;
+  --white-pear:#f7fbff;     /* blanco perlado 300 */
+  --navy:#0a1230;
 
-  /* Banner */
-  .banner{
-    width:100%; border-radius:16px; overflow:hidden; margin-bottom:12px;
-    box-shadow:0 8px 22px rgba(0,0,0,.45);
-    background:linear-gradient(180deg,#1a2244,#0f1630);
-  }
-  .banner img{display:block;width:100%;height:auto;object-fit:cover;object-position:center}
+  /* Acciones */
+  --ok:#25D366;             /* WhatsApp (se mantiene) */
+}
+*{box-sizing:border-box}
+html,body{height:100%;scroll-behavior:smooth}
+body{
+  margin:0;color:var(--text);
+  background:
+    radial-gradient(1000px 600px at 10% -5%, rgba(255,196,71,.14), transparent),
+    radial-gradient(800px 420px at 85% 5%, rgba(124,77,255,.20), transparent),
+    linear-gradient(180deg,#0b1030 0%, #071022 100%);
+  font:16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+}
+.container{max-width:940px;margin:18px auto 96px;padding:0 14px}
+.grid{display:grid;gap:14px}
+@media(min-width:900px){.grid{grid-template-columns:1.1fr .9fr}}
 
-  /* CTA buttons dock */
-  .dock{
-    position:fixed;left:0;right:0;bottom:0;z-index:30;
-    background:linear-gradient(180deg,rgba(10,15,30,0) 0%, rgba(10,15,30,.85) 22%, rgba(10,15,30,.98) 100%);
-    padding:10px 12px 12px; display:flex; gap:10px; flex-wrap:wrap
-  }
-  .btn{
-    appearance:none;border:none;cursor:pointer;font-weight:900;border-radius:14px;
-    padding:14px 14px; width:100%; color:#07121f;
-    box-shadow:0 10px 24px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.06);
-  }
-  .btn.cta{background:linear-gradient(90deg,#2af598,#009efd)}
-  .btn.platform{background:linear-gradient(90deg,#4ade80,#16a34a)}
-  .btn.wp{background:linear-gradient(90deg,#73ffa1,#25D366)}
-  .btn.ghost{
-    background:transparent;color:var(--text); border:1px solid var(--border); width:auto; padding:10px 12px
-  }
-  .btn:disabled{opacity:.65;cursor:not-allowed}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01)),var(--panel);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:12px;
+  box-shadow:0 12px 28px rgba(0,0,0,.4);
+  animation:fadeIn .8s ease;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hero{padding:12px}
+h1{margin:6px 0 10px;font-size:1.6rem}
+.muted{color:var(--muted)}
+.badge{
+  display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;
+  background:linear-gradient(90deg,var(--gold),#ffd978);color:#20120a;
+  border:1px solid rgba(255,255,255,.08);box-shadow:0 6px 18px rgba(0,0,0,.35);
+}
+.row{display:flex;gap:10px;align-items:center}
+.ok{color:#b3f5cf}
 
-  /* Code tag */
-  .codePill{
-    display:inline-flex;align-items:center; gap:8px; padding:6px 10px; border-radius:10px;
-    background:rgba(255,184,107,.12); color:#ffd8a6; border:1px solid rgba(255,184,107,.35);
-    font-weight:800; font-variant-numeric:tabular-nums; margin-left:6px;
-  }
+/* Logo centrado con glow dorado */
+.head{text-align:center;margin-bottom:16px}
+.logoHero{
+  width:auto;max-height:86px; /* desktop */
+  border-radius:10px;margin:14px auto 8px;display:block;
+  filter: drop-shadow(0 0 18px rgba(255,196,71,.25)) drop-shadow(0 0 6px rgba(255,196,71,.25));
+  animation:logoGlow 3.5s ease-in-out infinite;
+}
+@keyframes logoGlow{
+  0%,100%{filter:drop-shadow(0 0 12px rgba(255,196,71,.22)) drop-shadow(0 0 4px rgba(255,196,71,.18))}
+  50%{filter:drop-shadow(0 0 22px rgba(255,196,71,.40)) drop-shadow(0 0 10px rgba(255,196,71,.30))}
+}
+@media(max-width:560px){ .logoHero{max-height:74px} }
 
-  /* Video */
-  .videoWrap{
-    border:1px solid var(--border); border-radius:14px; overflow:hidden; background:#0a1329
-  }
-  .videoWrap video{display:block;width:100%;height:auto}
+.brandTitle{font-weight:900;font-size:28px;letter-spacing:1px}
+.badgeSub{display:inline-block;margin-top:4px}
 
-  /* Header */
-  .head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-  .brand{display:flex;align-items:center;gap:8px}
-  .logo{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;
-        background:linear-gradient(135deg,#2d2df5 0%,#00d1ff 100%);color:white;font-weight:900}
-  .brandTitle{font-weight:900;letter-spacing:.2px;font-size:22px}
-  .rightTop{margin-left:auto;display:flex;gap:8px;align-items:center}
+/* Banner */
+.banner{width:100%;border-radius:16px;overflow:hidden;margin-bottom:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,.45);
+}
+.banner img{width:100%;display:block;object-fit:cover}
 
-  /* Cards grid (premisas) */
-  .benefits{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-  @media(max-width:560px){.benefits{grid-template-columns:1fr}}
+/* Dock y botones con armonía al logo */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:30;
+  background:linear-gradient(180deg,rgba(10,15,30,0) 0%,rgba(10,15,30,.85) 22%,rgba(10,15,30,.98) 100%);
+  padding:10px 12px 12px;display:flex;gap:10px;flex-wrap:wrap
+}
+.btn{
+  border:none;cursor:pointer;font-weight:900;border-radius:14px;padding:14px;width:100%;
+  color:#0b0f1e; /* texto oscuro sobre dorado/blanco */
+  box-shadow:0 10px 24px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.06);
+  transition:transform .2s ease, filter .2s ease;
+}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.03)}
+/* CTA (registro WhatsApp) – dorado */
+.btn.cta{background:linear-gradient(90deg,var(--gold),var(--gold-2))}
+/* Plataforma – blanco perlado con borde sutil */
+.btn.platform{
+  background:linear-gradient(90deg,var(--white-pear),#eaf1ff);
+  color:var(--navy);
+}
+/* Botón “ghost” */
+.btn.ghost{
+  background:transparent;color:var(--text);border:1px solid var(--border);width:auto;padding:10px 12px
+}
 
-  /* Reduce scroll en móvil */
-  @media(max-width:560px){
-    .container{margin-bottom:90px}
-    .btn{padding:13px 12px}
-  }
+/* Code pill */
+.codePill{
+  display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:10px;
+  background:rgba(255,196,71,.12);color:#ffe2a8;border:1px solid rgba(255,196,71,.35);
+  font-weight:800;font-variant-numeric:tabular-nums;margin-left:6px;
+}
+
+/* Video */
+.videoWrap{
+  border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#0a1329
+}
+.videoWrap video{width:100%;display:block}
+@media(max-width:560px){
+  .container{margin-bottom:90px}
+  .btn{padding:13px}
+}
 </style>
 </head>
 <body>
   <div class="container">
     <div class="head">
-      <div class="brand">
-        <div class="logo">B3</div>
-        <div class="brandTitle">BET300</div>
-      </div>
-      <span class="badge">Plataforma renovada</span>
-      <div class="rightTop">
-        <button id="btnCond" class="btn ghost">Condiciones</button>
-      </div>
+      <!-- Subí el archivo a /public/bet300-logo.png o al mismo nivel del HTML -->
+      <img src="bet300-logo.png" alt="Bet300 Logo" class="logoHero" loading="eager" decoding="async">
+      <div class="brandTitle">BET300</div>
+      <span class="badge badgeSub">🎰 Plataforma oficial – Jugá con seguridad</span><br>
+      <button id="btnCond" class="btn ghost" style="margin-top:10px">Condiciones</button>
     </div>
 
     <div class="grid">
-      <!-- Columna izquierda -->
       <section class="card hero">
-        <!-- Banner con la imagen de los jokers -->
         <div class="banner">
-          <!-- ⚠️ Reemplazá la ruta si usás otro nombre/carpeta -->
           <img src="joker-banner.jpg" alt="BET300 promoción – personajes de slots" loading="lazy">
         </div>
 
         <span class="badge">🎁 Bienvenido</span>
-        <h1>30% EXTRA <b>EN TU PRIMERA CARGA</b> </h1>
+        <h1>30% EXTRA <b>EN TU PRIMERA CARGA</b></h1>
 
-        
-        <div class="panelList" style="margin-top:8px">
-          <div class="row"><span class="ok">✔</span> Numero de WhatsApp siempre actualizado en la plataforma.</div>
-          <div class="row"><span class="ok">✔</span> Carga y retiro al instante.</div>
-          <div class="row"><span class="ok">✔</span> Atencion las 24 hs <span id="codeTag" class="codePill">—</span></div>
-        </div>
+        <div class="row"><span class="ok">✔</span> Número de WhatsApp siempre actualizado en la plataforma.</div>
+        <div class="row"><span class="ok">✔</span> Carga y retiro al instante.</div>
+        <div class="row"><span class="ok">✔</span> Atención 24 hs <span id="codeTag" class="codePill">—</span></div>
 
         <div style="margin-top:10px" class="row">
           <button id="btnRegister" class="btn cta">🎁 REGISTRATE por WhatsApp</button>
           <button id="btnPlatform" class="btn platform">🌐 Ingresar a la Plataforma</button>
         </div>
 
-        <!-- Video explicativo (oculto si no hay archivo) -->
-        <div id="videoBox" class="videoWrap" style="margin-top:12px; display:none">
-          <!-- Reemplazá video.mp4 por tu archivo (ideal 9:16) -->
+        <div id="videoBox" class="videoWrap" style="margin-top:12px;display:none">
           <video id="howto" playsinline controls poster="">
             <source src="video.mp4" type="video/mp4">
           </video>
         </div>
       </section>
-      
-  <!-- Dock de botones (siempre visible) -->
+    </div>
+  </div>
+
   <div class="dock">
     <button id="btnRegisterBottom" class="btn cta">🎁 REGISTRATE</button>
-    <button id="btnPlatformBottom" class="btn platform">🌐 ingresar a la Plataforma</button>
+    <button id="btnPlatformBottom" class="btn platform">🌐 Ingresar a la Plataforma</button>
   </div>
 
 <script>
@@ -179,7 +174,6 @@ const WP_NUMBERS = {
   pc3: "5491172342259",
   pc4: "5491134970581"
 };
-
 /* Plataforma por PC (4 links distintos) */
 const PLATFORM_URLS = {
   pc1: "https://300vip-c01.vercel.app/",
@@ -187,7 +181,6 @@ const PLATFORM_URLS = {
   pc3: "https://300vip-c03.vercel.app/",
   pc4: "https://alvge.bet300vip.com/"
 };
-/* Fallback común, por si faltara el mapeo (opcional) */
 const PLATFORM_FALLBACK = "https://bet300.biz";
 
 /* ========= Utilidades ========= */
@@ -197,7 +190,7 @@ const pcKey   = "pc" + (pcParam.match(/^[1-4]$/) ? pcParam : "1");
 const WP      = WP_NUMBERS[pcKey];
 const PLATFORM = PLATFORM_URLS[pcKey] || PLATFORM_FALLBACK;
 
-/* ID de dispositivo simple para evitar duplicados */
+/* ID único simple */
 function ensureDeviceId(){
   let id = localStorage.getItem('b3_device');
   if(!id){
@@ -207,81 +200,44 @@ function ensureDeviceId(){
   return id;
 }
 const DEVICE_ID = ensureDeviceId();
+function todayKey(){const n=new Date();return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`;}
+function tsString(d=new Date()){return `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;}
+async function sha256hex(msg){if(!crypto?.subtle)return null;try{const enc=new TextEncoder().encode(msg);const buf=await crypto.subtle.digest("SHA-256",enc);return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");}catch{return null;}}
+async function makeCode(){const salt="bet300-reg-30v1";const base=`${DEVICE_ID}|${todayKey()}|pc:${pcParam}|${salt}|${Math.random()}`;const hex=await sha256hex(base);const raw=hex||Math.random().toString(36).slice(2)+Date.now().toString(36);return raw.slice(0,8).toUpperCase();}
 
-function todayKey(){
-  const n=new Date();
-  return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`;
-}
-function tsString(d=new Date()){
-  const dd=String(d.getDate()).padStart(2,'0'),
-        mm=String(d.getMonth()+1).padStart(2,'0'),
-        yyyy=d.getFullYear(),
-        hh=String(d.getHours()).padStart(2,'0'),
-        mi=String(d.getMinutes()).padStart(2,'0');
-  return `${dd}/${mm}/${yyyy} ${hh}:${mi}`;
-}
-async function sha256hex(msg){
-  if(!crypto?.subtle){ return null; }
-  try{
-    const enc = new TextEncoder().encode(msg);
-    const buf = await crypto.subtle.digest("SHA-256", enc);
-    return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,"0")).join("");
-  }catch{ return null; }
-}
-async function makeCode(){
-  const salt = "bet300-reg-30v1";
-  const base = `${DEVICE_ID}|${todayKey()}|pc:${pcParam}|${salt}|${Math.random()}`;
-  const hex = await sha256hex(base);
-  const raw = hex || Math.random().toString(36).slice(2) + Date.now().toString(36);
-  return raw.slice(0,8).toUpperCase();
-}
-
-/* Mostrar/ocultar video si existe archivo */
-(function tryShowVideo(){
-  // si vas a subir "video.mp4" al mismo directorio, se mostrará
-  fetch('video.mp4', {method:'HEAD'})
-    .then(r=>{ if(r.ok){ document.getElementById('videoBox').style.display='block'; } })
-    .catch(()=>{ /* no hay video, no mostramos */ });
-})();
+/* Mostrar video si existe */
+fetch('video.mp4',{method:'HEAD'}).then(r=>{if(r.ok)document.getElementById('videoBox').style.display='block';}).catch(()=>{});
 
 /* ========= Acciones ========= */
 async function goRegister(){
-  const code = await makeCode();
-  localStorage.setItem('b3_reg_code', code);
-  localStorage.setItem('b3_reg_ts', tsString());
-  document.getElementById('codeTag').textContent = code;
+  const code=await makeCode();
+  localStorage.setItem('b3_reg_code',code);
+  localStorage.setItem('b3_reg_ts',tsString());
+  document.getElementById('codeTag').textContent=code;
 
-  const text = `Hola, quiero crear mi usuario en BET300 y reclamar el 30%% EXTRA en mi primera carga automática.
+  const text=`Hola, quiero crear mi usuario en BET300 y reclamar el 30% EXTRA en mi primera carga automática.
 • Código: ${code}
 • Fecha/Hora: ${tsString()}
 
 ¿Me ayudás con el alta?`;
-  const href = `https://wa.me/${WP}?text=${encodeURIComponent(text)}`;
-  location.href = href;
+  location.href=`https://wa.me/${WP}?text=${encodeURIComponent(text)}`;
 }
-function goPlatform(){ location.href = PLATFORM + (PLATFORM.includes('?') ? `&pc=${pcParam}` : `?pc=${pcParam}`); }
+function goPlatform(){location.href=PLATFORM+(PLATFORM.includes('?')?`&pc=${pcParam}`:`?pc=${pcParam}`);}
 
-/* ========= Wire ========= */
-document.getElementById('btnRegister').onclick = goRegister;
-document.getElementById('btnRegisterBottom').onclick = goRegister;
-document.getElementById('btnPlatform').onclick = goPlatform;
-document.getElementById('btnPlatformBottom').onclick = goPlatform;
+/* Wire */
+document.getElementById('btnRegister').onclick=goRegister;
+document.getElementById('btnRegisterBottom').onclick=goRegister;
+document.getElementById('btnPlatform').onclick=goPlatform;
+document.getElementById('btnPlatformBottom').onclick=goPlatform;
+document.getElementById('btnCond').onclick=()=>alert(`CONDICIONES PROMO 30% EXTRA
+— Solo para la primera carga automática del usuario nuevo.
+— Código personal e intransferible (vence hoy).
+— Cargas y retiros instantáneos desde la plataforma.
+— Soporte 24/7.
+— Sujeto a verificación BET300.`);
 
-/* Condiciones simples */
-document.getElementById('btnCond').onclick = ()=>alert(
-  `CONDICIONES PROMO 30% EXTRA
-— Beneficio válido solo para la PRIMERA carga automática del usuario nuevo.
-— El código generado es personal e intransferible (vence el mismo día).
-— Autogestión disponible dentro de la plataforma (cargas y retiros).
-— Soporte por chat en vivo 24/7 dentro de la plataforma.
-— Sujeto a verificación y términos de BET300.`
-);
-
-/* Pintar pill con código si ya existe */
-(function restoreCode(){
-  const c = localStorage.getItem('b3_reg_code');
-  if(c){ document.getElementById('codeTag').textContent = c; }
-})();
+/* Mostrar el código previo si existe */
+const c=localStorage.getItem('b3_reg_code');if(c)document.getElementById('codeTag').textContent=c;
 </script>
 </body>
 </html>
