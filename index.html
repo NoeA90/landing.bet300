@@ -145,14 +145,14 @@
 
         
         <div class="panelList" style="margin-top:8px">
-          <div class="row"><span class="ok">✔</span> Atención 24/7 por chat en la plataforma.</div>
+          <div class="row"><span class="ok">✔</span> Numero de WhatsApp siempre actualizado en la plataforma.</div>
           <div class="row"><span class="ok">✔</span> Carga y retiro al instante.</div>
-          <div class="row"><span class="ok">✔</span> Atencion personalizada por WhatsApp <span id="codeTag" class="codePill">—</span></div>
+          <div class="row"><span class="ok">✔</span> Atencion las 24 hs <span id="codeTag" class="codePill">—</span></div>
         </div>
 
         <div style="margin-top:10px" class="row">
-          <button id="btnRegister" class="btn cta">🎁 REGISTRATE PARA RECLAMAR</button>
-          <button id="btnPlatform" class="btn platform">🌐 Plataforma</button>
+          <button id="btnRegister" class="btn cta">🎁 REGISTRATE por WhatsApp</button>
+          <button id="btnPlatform" class="btn platform">🌐 Ingresar a la Plataforma</button>
         </div>
 
         <!-- Video explicativo (oculto si no hay archivo) -->
@@ -166,8 +166,8 @@
       
   <!-- Dock de botones (siempre visible) -->
   <div class="dock">
-    <button id="btnRegisterBottom" class="btn cta">🎁 REGISTRATE PARA RECLAMAR</button>
-    <button id="btnPlatformBottom" class="btn platform">🌐 Plataforma</button>
+    <button id="btnRegisterBottom" class="btn cta">🎁 REGISTRATE</button>
+    <button id="btnPlatformBottom" class="btn platform">🌐 ingresar a la Plataforma</button>
   </div>
 
 <script>
@@ -179,14 +179,23 @@ const WP_NUMBERS = {
   pc3: "5491172342259",
   pc4: "5491134970581"
 };
-/* Plataforma (home) — ajustá si usás otra URL */
-const PLATFORM_URL = "https://bet300.biz";
+
+/* Plataforma por PC (4 links distintos) */
+const PLATFORM_URLS = {
+  pc1: "https://300vip-c01.vercel.app/",
+  pc2: "https://300vip-c02.vercel.app/",
+  pc3: "https://300vip-c03.vercel.app/",
+  pc4: "https://alvge.bet300vip.com/"
+};
+/* Fallback común, por si faltara el mapeo (opcional) */
+const PLATFORM_FALLBACK = "https://bet300.biz";
 
 /* ========= Utilidades ========= */
 const params = new URLSearchParams(location.search);
 const pcParam = (params.get("pc") || "1").trim();
-const pcKey = "pc" + (pcParam.match(/^[1-4]$/) ? pcParam : "1");
-const WP = WP_NUMBERS[pcKey];
+const pcKey   = "pc" + (pcParam.match(/^[1-4]$/) ? pcParam : "1");
+const WP      = WP_NUMBERS[pcKey];
+const PLATFORM = PLATFORM_URLS[pcKey] || PLATFORM_FALLBACK;
 
 /* ID de dispositivo simple para evitar duplicados */
 function ensureDeviceId(){
@@ -250,7 +259,7 @@ async function goRegister(){
   const href = `https://wa.me/${WP}?text=${encodeURIComponent(text)}`;
   location.href = href;
 }
-function goPlatform(){ location.href = PLATFORM_URL + `/?pc=${pcParam}`; }
+function goPlatform(){ location.href = PLATFORM + (PLATFORM.includes('?') ? `&pc=${pcParam}` : `?pc=${pcParam}`); }
 
 /* ========= Wire ========= */
 document.getElementById('btnRegister').onclick = goRegister;
